@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abhixdd.github.io/glyphex/sitemap.xml
+Sitemap: https://glyphex.abhix.me/sitemap.xml
