@@ -1,4 +1,4 @@
-# Glyphex - "preview Minecraft text shaders in your browser"
+# Glyphex - "Minecraft text shaders, live"
 
 > A simple, pretty browser tool that lets you load a resource pack, try its text effects and write scratch GLSL, with a live preview of how it renders in game.
 
