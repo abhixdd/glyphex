@@ -8,7 +8,7 @@ import Select from './components/Select'
 import Stepper from './components/Stepper'
 import ScratchEditor from './components/ScratchEditor'
 import Clouds from './components/Clouds'
-import { ColorPickerIcon, GithubIcon } from './components/icons'
+import { ColorPickerIcon, CoffeeIcon, GithubIcon } from './components/icons'
 import { loadPack, selectedSources, cachedPack, clearPack } from './lib/pack'
 import { fallbackFont, emptyFont, importFont, cachedFont, clearFont } from './lib/fontAtlas'
 import { hexColor } from './lib/legacyText'
@@ -179,7 +179,7 @@ export default function App() {
           <div className="flex-1" />
           <label
             title="Click to load a resource pack (.zip)"
-            className="inset flex cursor-pointer items-center gap-3 whitespace-nowrap py-1.25 pl-1.25 pr-1.5"
+            className="inset flex cursor-pointer items-center gap-3 whitespace-nowrap py-1.25 pl-1.25 pr-1.5 max-sm:order-2"
           >
             <input
               type="file"
@@ -204,11 +204,29 @@ export default function App() {
               </span>
             )}
           </label>
-          <button type="button" onClick={() => setPaused(value => !value)} className="btn px-3.5 py-2.25 text-[13px]">
+          <button type="button" onClick={() => setPaused(value => !value)} className="btn px-3.5 py-2.25 text-[13px] max-sm:order-2">
             {paused ? 'Play' : 'Pause'}<span className="hidden sm:inline"> · Space</span>
           </button>
-          <a href="https://github.com/abhixdd/glyphex" target="_blank" rel="noreferrer" className="btn btn-primary px-4 py-2.25 text-[13px] font-bold no-underline">
-            GitHub
+          <a
+            href="https://ko-fi.com/abhixd"
+            target="_blank"
+            rel="noreferrer"
+            title="Support Glyphex on Ko-fi"
+            aria-label="Support Glyphex on Ko-fi"
+            className="btn inline-flex h-9.5 items-center gap-2 px-3 text-[13px] no-underline"
+          >
+            <CoffeeIcon className="size-5.5 text-[#ff7b78]" />
+            <span className="hidden sm:inline">Support</span>
+          </a>
+          <a
+            href="https://github.com/abhixdd/glyphex"
+            target="_blank"
+            rel="noreferrer"
+            title="Glyphex on GitHub"
+            aria-label="Glyphex on GitHub"
+            className="btn btn-primary inline-flex h-9.5 w-10 items-center justify-center no-underline"
+          >
+            <GithubIcon className="size-5" />
           </a>
         </header>
 
@@ -575,6 +593,10 @@ export default function App() {
             </div>
             <div className="flex-1" />
             <span className="text-[13px] text-(--muted)">Made by <a href="https://github.com/abhixdd" target="_blank" rel="noreferrer" className="font-semibold text-(--text) underline-offset-2 hover:text-(--accent-text) hover:underline">ABHI</a></span>
+            <a href="https://ko-fi.com/abhixd" target="_blank" rel="noreferrer" className="btn inline-flex items-center gap-2 px-3.5 py-2 text-[13px] font-bold no-underline">
+              <CoffeeIcon className="size-4 text-[#ff7b78]" />
+              Support on Ko-fi
+            </a>
             <a href="https://github.com/abhixdd/glyphex" target="_blank" rel="noreferrer" className="btn btn-primary inline-flex items-center gap-2 px-3.5 py-2 text-[13px] font-bold no-underline">
               <GithubIcon className="size-4" />
               Source on GitHub

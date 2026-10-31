@@ -8,6 +8,7 @@ Load a resource pack, try its text effects, and write GLSL with a live preview o
 
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-3d5af1)](LICENSE)
 [![WebGL2](https://img.shields.io/badge/WebGL-2-3d5af1)](#browser-support)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/abhixd)
 [![Runs locally](https://img.shields.io/badge/runs-100%25%20in%20your%20browser-3d5af1)](#privacy)
 
 ![Glyphex](docs/screenshot.png)
@@ -103,6 +104,10 @@ Glyphex needs a current browser with WebGL2, with hardware acceleration turned o
 | `npm run build` | Production build into `dist/` |
 | `npm run preview` | Serve the production build locally |
 | `npm run lint` | Run oxlint |
+
+## Support
+
+Glyphex is free. If it saves you time, you can [buy me a coffee on Ko-fi](https://ko-fi.com/abhixd). Starring the repo and sharing it helps too.
 
 ## Contributing
 
