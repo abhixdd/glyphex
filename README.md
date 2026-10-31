@@ -1,19 +1,12 @@
-<div align="center">
+# Glyphex - "preview Minecraft text shaders right in your browser"
 
-# Glyphex
+> A simple, pretty browser tool that lets you load a resource pack, try its text effects and write scratch GLSL, with a live preview of how it renders in game.
 
-**Preview Minecraft text shaders in your browser. No game restarts.**
-
-Load a resource pack, try its text effects, and write GLSL with a live preview of how it renders in game.
-
-[![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-3d5af1)](LICENSE)
-[![WebGL2](https://img.shields.io/badge/WebGL-2-3d5af1)](#browser-support)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/abhixd)
-[![Runs locally](https://img.shields.io/badge/runs-100%25%20in%20your%20browser-3d5af1)](#privacy)
+[![license](https://img.shields.io/badge/license-AGPL--3.0-blue?style=flat)](LICENSE)
+[![runs](https://img.shields.io/badge/runs-in%20your%20browser-blue?style=flat)](#privacy)
+[![ko-fi](https://img.shields.io/badge/ko--fi-support-ff5e5b?style=flat)](https://ko-fi.com/abhixd)
 
 ![Glyphex](docs/screenshot.png)
-
-</div>
 
 ## Why
 
