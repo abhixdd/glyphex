@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* Pixelify Sans, bundled locally (variable weight) */
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/pixelify-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/pixelify-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/pixelify-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg: #0b0d12;
+  --surface: #14171d;
+  --toolbar: #0c0f14;
+  --field: #05080f;
+  --edge: #07090c;
+  --border: #2a3040;
+  --border-soft: #1b202c;
+  --text: #e6e8f0;
+  --label: #9aa3bf;
+  --muted: #7d86a3;
+  --accent: #3d5af1;
+  --accent-deep: #1d2d8a;
+  --accent-text: #8fa8ff;
+  --on-accent: #ffffff;
+  --btn: #3b4254;
+  --btn-deep: #1c202b;
+  --live: #4cf04c;
+}
+
+.font-pixel {
+  font-family: "Pixelify Sans", ui-monospace, monospace;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--accent-text);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 55%, transparent);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+code, pre, .font-mono {
+  font-family: Consolas, ui-monospace, "SFMono-Regular", "Cascadia Code", monospace;
+}
+
+a { color: var(--accent-text); }
+a:hover { color: #ffffff; }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ---------- Hero: blue sky over a red band, cut on a diagonal ---------- */
+
+.hero-band,
+.hero-sky {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 460px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 78%);
+}
+.hero-band { top: 14px; background: #a63f3b; }
+.hero-sky { top: 0; background: linear-gradient(180deg, #2a6be0, #3c58cc); }
+
+@keyframes drift {
+  from { transform: translateX(-160px); }
+  to { transform: translateX(calc(100vw + 40px)); }
+}
+
+/* ---------- Design system: panels, insets, raised buttons ---------- */
+
+.panel {
+  background: var(--surface);
+  border: 2px solid var(--edge);
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 8px;
+}
+
+.inset {
+  background: var(--field);
+  border: 2px solid var(--edge);
+  box-shadow: 0 0 0 1px var(--border);
+  border-radius: 6px;
+  transition: box-shadow 0.12s;
+}
+.inset:hover { box-shadow: 0 0 0 1px var(--muted); }
+.inset:focus-within { box-shadow: 0 0 0 1px var(--accent-text); }
+
+.section-label {
+  font-family: "Pixelify Sans", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.btn {
+  background: var(--btn);
+  color: var(--text);
+  border: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 3px 0 var(--btn-deep);
+  transition: filter 0.1s, transform 0.06s, box-shadow 0.06s;
+}
+.btn:hover:not(:disabled) { filter: brightness(1.12); }
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), 0 1px 0 var(--btn-deep);
+}
+.btn:disabled { cursor: not-allowed; opacity: 0.45; }
+
+.btn-primary,
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 3px 0 var(--accent-deep);
+}
+.btn-primary:active:not(:disabled) {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 1px 0 var(--accent-deep);
+}
+
+.btn-danger:hover:not(:disabled) { background: #5a2a33; filter: none; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.35s ease-out both; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in { animation: fade-in 0.25s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

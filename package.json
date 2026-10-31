@@ -1,0 +1,50 @@
+{
+  "name": "glyphex",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Preview Minecraft core text shaders, resource pack text effects and font atlases in your browser, with a scratch GLSL editor.",
+  "author": "ABHI (https://github.com/abhixdd)",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhixdd/glyphex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abhixdd/glyphex/issues"
+  },
+  "homepage": "https://github.com/abhixdd/glyphex#readme",
+  "keywords": [
+    "minecraft",
+    "shader",
+    "glsl",
+    "resource-pack",
+    "text-shader",
+    "font-atlas",
+    "webgl2",
+    "preview"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.89.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.5"
+  }
+}
